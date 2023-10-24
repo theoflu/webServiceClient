@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: userdetail
+  name: userdetail
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: userdetail
+  template:
+    metadata:
+      labels:
+        app: userdetail
+    spec:
+      containers:
+        - image: theoflu/userdetail
+          name: userdetail
