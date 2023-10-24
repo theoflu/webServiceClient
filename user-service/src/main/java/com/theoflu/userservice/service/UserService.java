@@ -19,7 +19,7 @@ public class UserService {
     }
 
     public User getUserandDetail (String IdentityId){
-        UserDetails userDetail=userDetailClient.getUserIdentityIdNumber(IdentityId).getBody();
+        UserDetails userDetail=userDetailClient.getUserIdentityIdNumber(IdentityId).getBody();//diğer apiden bilgileri aldık.
         User user=userRepository.findByIdentityId(IdentityId);
         user.setUserDetails(userDetail);
         return user;
